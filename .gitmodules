@@ -1,0 +1,4 @@
+[submodule "KMCCC"]
+	path = KMCCC
+	url = https://github.com/MineStudio/KMCCC
+	branch = master
