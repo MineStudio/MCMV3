@@ -34,6 +34,7 @@
 					<Grid.RowDefinitions>
 						<RowDefinition Height="30"/>
 						<RowDefinition Height="30"/>
+						<RowDefinition Height="30"/>
 						<RowDefinition/>
 					</Grid.RowDefinitions>
 					<Grid.ColumnDefinitions>
@@ -42,8 +43,16 @@
 					</Grid.ColumnDefinitions>
 					<Label HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Content="最大内存"/>
 					<Label HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Content="附加参数"/>
+					<Label HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Content="启动模式"/>
 					<TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Width="160" Height="20" x:Name="MaxMem"></TextBox>
 					<TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Width="160" Height="20" x:Name="AdvArg"></TextBox>
+					<ComboBox HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" Width="160" x:Name="LaunchMode">
+						<ComboBox.Items>
+							<ComboBoxItem Tag="Default">默认方式</ComboBoxItem>
+							<ComboBoxItem Tag="BMCL">BMCL模式</ComboBoxItem>
+							<ComboBoxItem Tag="MCLauncher">MCLauncher模式</ComboBoxItem>
+						</ComboBox.Items>
+					</ComboBox>
 				</Grid>
 			</TabItem>
 			<TabItem Header="关于">

@@ -25,6 +25,8 @@ namespace MCMV3
 
 		public static String AdvancedArguments { get { return instance._mAdvancedArguments; } set { instance._mAdvancedArguments = value; Save(); } }
 
+		public static String LaunchMode { get { return instance._mLaunchMode; } set { instance._mLaunchMode = value; Save(); } }
+
 		static Config()
 		{
 			Load();
@@ -50,6 +52,9 @@ namespace MCMV3
 
 		[JsonPropertyName("AdvancedArguments")]
 		public String _mAdvancedArguments;
+
+		[JsonPropertyName("LaunchMode")]
+		public String _mLaunchMode;
 
 		public static void Save()
 		{

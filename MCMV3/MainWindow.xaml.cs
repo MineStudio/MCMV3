@@ -51,7 +51,8 @@ namespace MCMV3
 				Version = ver,
 				MaxMemory = Config.MaxMemory,
 				Authenticator = (Config.Authenticator == "Yggdrasil") ?
-				((IAuthenticator)new YggdrasilLogin(Config.UserName, Config.Password, true)) : ((IAuthenticator)new OfflineAuthenticator(Config.UserName))
+				((IAuthenticator)new YggdrasilLogin(Config.UserName, Config.Password, true)) : ((IAuthenticator)new OfflineAuthenticator(Config.UserName)),
+				Mode = (Config.LaunchMode=="BMCL")?LaunchMode.BMCL:((Config.LaunchMode=="MCLauncher")?LaunchMode.MCLauncher:LaunchMode.Own)
 			}, args => { args.AdvencedArguments.Add(Config.AdvancedArguments); });
 			if (handle == null)
 			{

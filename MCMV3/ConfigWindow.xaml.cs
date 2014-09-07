@@ -25,10 +25,22 @@ namespace MCMV3
 			switch (Config.Authenticator)
 			{
 				case "Yggdrasil":
-					Authenticator.SelectedItem = Authenticator.Items[0];
+					Authenticator.SelectedIndex = 0;
 					break;
 				case "Offline":
-					Authenticator.SelectedItem = Authenticator.Items[1];
+					Authenticator.SelectedIndex = 1;
+					break;
+			}
+			switch (Config.LaunchMode)
+			{
+				case "Default":
+					LaunchMode.SelectedIndex = 0;
+					break;
+				case "BMCL":
+					LaunchMode.SelectedIndex = 1;
+					break;
+				case "MCLauncher":
+					LaunchMode.SelectedIndex = 2;
 					break;
 			}
 			UserName.Text = Config.UserName;
@@ -77,6 +89,11 @@ namespace MCMV3
 				default:
 					e.Cancel = true; return;
 			}
+			if (LaunchMode.SelectedIndex == null)
+			{
+				MessageBox.Show("请选择启动模式"); e.Cancel = true; return;
+			}
+			Config.LaunchMode = (String)((dynamic)LaunchMode.SelectedItem).Tag;
 			int maxMem = 0;
 			if (!int.TryParse(MaxMem.Text, out maxMem))
 			{
