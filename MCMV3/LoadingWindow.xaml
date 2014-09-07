@@ -1,0 +1,8 @@
+﻿<Window x:Class="MCMV3.LoadingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LoadingWindow" Height="512" Width="512" WindowStartupLocation="CenterScreen" WindowStyle="None">
+	<Image Source="Logo.png" Margin="0">
+		
+	</Image>
+</Window>

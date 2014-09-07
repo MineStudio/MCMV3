@@ -1,0 +1,72 @@
+﻿<Window x:Class="MCMV3.ConfigWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="设置" Height="300" Width="300" WindowStartupLocation="CenterOwner" Closing="Window_Closing" ResizeMode="NoResize">
+	<Grid>
+		<TabControl>
+			<TabItem Header="验证">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="30"/>
+						<RowDefinition Height="30"/>
+						<RowDefinition Height="30"/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="2*"/>
+						<ColumnDefinition Width="5*"/>
+					</Grid.ColumnDefinitions>
+					<Label HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Content="验证方式"/>
+					<Label HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Content="用户名/Email"/>
+					<Label HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Content="密码"/>
+					<ComboBox HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Width="160" x:Name="Authenticator" SelectionChanged="Authenticator_SelectionChanged">
+						<ComboBox.Items>
+							<ComboBoxItem Tag="Yggdrasil">正版</ComboBoxItem>
+							<ComboBoxItem Tag="Offline">离线</ComboBoxItem>
+						</ComboBox.Items>
+					</ComboBox>
+					<TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Width="160" Height="20" x:Name="UserName"></TextBox>
+					<PasswordBox HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" Width="160" Height="20" x:Name="Password"></PasswordBox>
+				</Grid>
+			</TabItem>
+			<TabItem Header="启动设置">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="30"/>
+						<RowDefinition Height="30"/>
+						<RowDefinition Height="30"/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="2*"/>
+						<ColumnDefinition Width="5*"/>
+					</Grid.ColumnDefinitions>
+					<Label HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Content="最大内存"/>
+					<Label HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Content="附加参数"/>
+					<Label HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Content="启动模式"/>
+					<TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Width="160" Height="20" x:Name="MaxMem"></TextBox>
+					<TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Width="160" Height="20" x:Name="AdvArg"></TextBox>
+					<ComboBox HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" Width="160" x:Name="LaunchMode">
+						<ComboBox.Items>
+							<ComboBoxItem Tag="Default">默认方式</ComboBoxItem>
+							<ComboBoxItem Tag="BMCL">BMCL模式</ComboBoxItem>
+							<ComboBoxItem Tag="MCLauncher">MCLauncher模式</ComboBoxItem>
+						</ComboBox.Items>
+					</ComboBox>
+				</Grid>
+			</TabItem>
+			<TabItem Header="关于">
+				<StackPanel>
+					<TextBlock FontSize="24">MCMV3</TextBlock>
+					<TextBlock FontSize="12">Powered By KBlack</TextBlock>
+					<TextBlock>
+						using KMCCC (under LGPL) LitJson (public domain)
+					</TextBlock>
+					<Label Content="http://github.com/MineStudio" MouseDown="Label_MouseDown">
+
+					</Label>
+				</StackPanel>
+			</TabItem>
+		</TabControl>
+	</Grid>
+</Window>
