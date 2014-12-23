@@ -46,7 +46,7 @@ namespace MCMV3
 		{
 			var ver = (Version)List_ver.SelectedItem;
 			Config.LastVersion = ver.Id;
-			var handle = App.core.Launch(new LaunchOptions
+			var result = App.core.Launch(new LaunchOptions
 			{
 				Version = ver,
 				MaxMemory = Config.MaxMemory,
@@ -54,10 +54,19 @@ namespace MCMV3
 				((IAuthenticator)new YggdrasilLogin(Config.UserName, Config.Password, true)) : ((IAuthenticator)new OfflineAuthenticator(Config.UserName)),
 				Mode = (Config.LaunchMode=="BMCL")?LaunchMode.BMCL:((Config.LaunchMode=="MCLauncher")?LaunchMode.MCLauncher:LaunchMode.Own)
 			}, args => { args.AdvencedArguments.Add(Config.AdvancedArguments); });
-			if (handle == null)
+			if (!result.Success)
 			{
-				MessageBox.Show("启动失败！");
-				new ConfigWindow { Owner = this }.ShowDialog();
+				MessageBox.Show(result.ErrorMessage, result.ErrorType.ToString(), MessageBoxButton.OK, MessageBoxImage.Error);
+				switch (result.ErrorType)
+				{
+					case ErrorType.NoJAVA:
+					case ErrorType.AuthenticationFailed:
+						new ConfigWindow { Owner = this }.ShowDialog();
+						break;
+					default:
+
+						break;
+				}
 			}
 			else
 			{
