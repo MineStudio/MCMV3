@@ -1,34 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-
-namespace MCMV3
+﻿namespace MCMV3
 {
+	#region
+
+	using System;
+	using System.IO;
+
+	#endregion
+
 	public static class Logger
 	{
+		private static readonly TextWriter LogWriter;
+
 		static Logger()
 		{
-			tw = File.CreateText("mcm.log");
+			LogWriter = File.CreateText("mcm.log");
 		}
-
-		private static TextWriter tw;
 
 		public static void Log(String log)
 		{
-			lock (tw)
+			lock (LogWriter)
 			{
-				tw.WriteLine(log);
+				LogWriter.WriteLine(log);
 			}
 		}
 
 		public static void End()
 		{
-			lock (tw)
+			lock (LogWriter)
 			{
-				tw.Flush();
-				tw.Dispose();
+				LogWriter.Flush();
+				LogWriter.Dispose();
 			}
 		}
 	}

@@ -79,14 +79,14 @@
     <Compile Include="..\KMCCC\KMCCC\Launcher\LauncherCoreInternal.cs">
       <Link>KMCCC\Launcher\LauncherCoreInternal.cs</Link>
     </Compile>
+    <Compile Include="..\KMCCC\KMCCC\Launcher\LaunchMode.cs">
+      <Link>KMCCC\Launcher\LaunchMode.cs</Link>
+    </Compile>
     <Compile Include="..\KMCCC\KMCCC\Launcher\Version.cs">
       <Link>KMCCC\Launcher\Version.cs</Link>
     </Compile>
     <Compile Include="..\KMCCC\KMCCC\Launcher\LaunchArguments.cs">
       <Link>KMCCC\Launcher\LaunchArguments.cs</Link>
-    </Compile>
-    <Compile Include="..\KMCCC\KMCCC\Modules\JVersion.cs">
-      <Link>KMCCC\Modules\JVersion.cs</Link>
     </Compile>
     <Compile Include="..\KMCCC\KMCCC\LitJson\IJsonWrapper.cs">
       <Link>KMCCC\LitJson\IJsonWrapper.cs</Link>
@@ -118,11 +118,14 @@
     <Compile Include="..\KMCCC\KMCCC\LitJson\ParserToken.cs">
       <Link>KMCCC\LitJson\ParserToken.cs</Link>
     </Compile>
-    <Compile Include="..\KMCCC\KMCCC\Modules\YggdrasilClient.cs">
-      <Link>KMCCC\Modules\YggdrasilClient.cs</Link>
+    <Compile Include="..\KMCCC\KMCCC\Modules\JVersion\JVersion.cs">
+      <Link>KMCCC\Modules\JVersion\JVersion.cs</Link>
     </Compile>
-    <Compile Include="..\KMCCC\KMCCC\Tools\HttpGP.cs">
-      <Link>KMCCC\Tools\HttpGP.cs</Link>
+    <Compile Include="..\KMCCC\KMCCC\Modules\JVersion\JVersionLocator.cs">
+      <Link>KMCCC\Modules\JVersion\JVersionLocator.cs</Link>
+    </Compile>
+    <Compile Include="..\KMCCC\KMCCC\Modules\Yggdrasil\YggdrasilClient.cs">
+      <Link>KMCCC\Modules\Yggdrasil\YggdrasilClient.cs</Link>
     </Compile>
     <Compile Include="..\KMCCC\KMCCC\Tools\SystemTools.cs">
       <Link>KMCCC\Tools\SystemTools.cs</Link>

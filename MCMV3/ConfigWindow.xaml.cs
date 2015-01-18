@@ -1,23 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-
-namespace MCMV3
+﻿namespace MCMV3
 {
+	#region
+
+	using System;
+	using System.ComponentModel;
+	using System.Diagnostics;
+	using System.Globalization;
+	using System.Windows;
+	using System.Windows.Controls;
+	using System.Windows.Input;
+
+	#endregion
+
 	/// <summary>
-	/// ConfigWindow.xaml 的交互逻辑
+	///     ConfigWindow.xaml 的交互逻辑
 	/// </summary>
-	public partial class ConfigWindow : Window
+	public partial class ConfigWindow
 	{
 		public ConfigWindow()
 		{
@@ -45,7 +43,7 @@ namespace MCMV3
 			}
 			UserName.Text = Config.UserName;
 			Password.Password = Config.Password;
-			MaxMem.Text = Config.MaxMemory.ToString();
+			MaxMem.Text = Config.MaxMemory.ToString(CultureInfo.InvariantCulture);
 			AdvArg.Text = Config.AdvancedArguments;
 		}
 
@@ -54,24 +52,28 @@ namespace MCMV3
 			Process.Start("http://github.com/MineStudio");
 		}
 
-		private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+		private void Window_Closing(object sender, CancelEventArgs e)
 		{
 			if (Authenticator.SelectedItem == null)
 			{
-				MessageBox.Show("请选择验证方式"); e.Cancel = true; return;
+				MessageBox.Show("请选择验证方式");
+				e.Cancel = true;
+				return;
 			}
-			switch ((String)((dynamic)Authenticator.SelectedItem).Tag)
+			switch ((String) ((dynamic) Authenticator.SelectedItem).Tag)
 			{
 				case "Yggdrasil":
 					if (String.IsNullOrWhiteSpace(UserName.Text))
 					{
 						MessageBox.Show("请输入Email");
-						e.Cancel = true; return;
+						e.Cancel = true;
+						return;
 					}
 					if (String.IsNullOrWhiteSpace(Password.Password))
 					{
 						MessageBox.Show("请输入密码");
-						e.Cancel = true; return;
+						e.Cancel = true;
+						return;
 					}
 					Config.Authenticator = "Yggdrasil";
 					Config.UserName = UserName.Text;
@@ -81,24 +83,29 @@ namespace MCMV3
 					if (String.IsNullOrWhiteSpace(UserName.Text))
 					{
 						MessageBox.Show("请输入用户名");
-						e.Cancel = true; return;
+						e.Cancel = true;
+						return;
 					}
 					Config.Authenticator = "Offline";
 					Config.UserName = UserName.Text;
 					break;
 				default:
-					e.Cancel = true; return;
+					e.Cancel = true;
+					return;
 			}
-			if (LaunchMode.SelectedIndex == null)
+			if (LaunchMode.SelectedIndex == -1)
 			{
-				MessageBox.Show("请选择启动模式"); e.Cancel = true; return;
+				MessageBox.Show("请选择启动模式");
+				e.Cancel = true;
+				return;
 			}
-			Config.LaunchMode = (String)((dynamic)LaunchMode.SelectedItem).Tag;
-			int maxMem = 0;
+			Config.LaunchMode = (String) ((dynamic) LaunchMode.SelectedItem).Tag;
+			int maxMem;
 			if (!int.TryParse(MaxMem.Text, out maxMem))
 			{
 				MessageBox.Show("请输入正确的最大内存");
-				e.Cancel = true; return;
+				e.Cancel = true;
+				return;
 			}
 			Config.MaxMemory = maxMem;
 			Config.AdvancedArguments = AdvArg.Text;
@@ -106,7 +113,7 @@ namespace MCMV3
 
 		private void Authenticator_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			switch ((String)((dynamic)Authenticator.SelectedItem).Tag)
+			switch ((String) ((dynamic) Authenticator.SelectedItem).Tag)
 			{
 				case "Yggdrasil":
 					Password.IsEnabled = true;

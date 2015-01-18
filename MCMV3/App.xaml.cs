@@ -1,29 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
-using KMCCC.Launcher;
-
-namespace MCMV3
+﻿namespace MCMV3
 {
-	/// <summary>
-	/// App.xaml 的交互逻辑
-	/// </summary>
-	public partial class App : Application
-	{
-		private MainWindow mainWindow;
+	#region
 
-		public static LauncherCore core = LauncherCore.Create(LauncherCoreCreationOption.Create());
+	using System.Threading;
+	using System.Windows;
+	using KMCCC.Launcher;
+
+	#endregion
+
+	/// <summary>
+	///     App.xaml 的交互逻辑
+	/// </summary>
+	public partial class App
+	{
+		public static LauncherCore Core = LauncherCore.Create();
+		private MainWindow _mainWindow;
 
 		protected override void OnStartup(StartupEventArgs e)
 		{
 			base.OnStartup(e);
-			mainWindow = new MainWindow();
-			mainWindow.Show();
+			_mainWindow = new MainWindow();
+			_mainWindow.Show();
 		}
 
 		protected override void OnExit(ExitEventArgs e)
