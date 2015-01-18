@@ -22,14 +22,14 @@
 			InitializeComponent();
 			var last = Config.LastVersion;
 			var versions = App.Core.GetVersions().ToArray();
-			List_ver.ItemsSource = versions;
+			ListVersions.ItemsSource = versions;
 			if (versions.Count(ver => ver.Id == last) > 0)
 			{
-				List_ver.SelectedItem = versions.First(ver => ver.Id == last);
+				ListVersions.SelectedItem = versions.First(ver => ver.Id == last);
 			}
 			else if (versions.Any())
 			{
-				List_ver.SelectedItem = versions[0];
+				ListVersions.SelectedItem = versions[0];
 			}
 			App.Core.GameExit += OnExit;
 			App.Core.GameLog += OnLog;
@@ -42,7 +42,7 @@
 
 		private void Btn_launch_Click(object sender, RoutedEventArgs e)
 		{
-			var ver = (Version) List_ver.SelectedItem;
+			var ver = (Version) ListVersions.SelectedItem;
 			Config.LastVersion = ver.Id;
 			var result = App.Core.Launch(new LaunchOptions
 			{
