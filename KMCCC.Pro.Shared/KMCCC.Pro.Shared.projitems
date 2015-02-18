@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>564f0af1-50e3-4ab4-a3b1-9a73882c3f3b</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Common</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+	  <Compile Include="$(MSBuildThisFileDirectory)../KMCCC/KMCCC.Pro/LauncherCore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)../KMCCC/KMCCC.Pro/Reporter.cs" />
+  </ItemGroup>
+</Project>

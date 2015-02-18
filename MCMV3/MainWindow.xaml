@@ -18,8 +18,8 @@
 			          HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Background="#7FDDDDDD"
 			          DisplayMemberPath="Id" />
 			<Button Width="40" Height="40" Margin="582,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
-		        Click="ButtonBase_OnClick" Content="X" FontSize="30" Background="#00000000" BorderBrush="#00000000"
-		        Foreground="Red" FontFamily="Bradley Hand ITC" ToolTip="关闭" FontWeight="Bold" />
+			        Click="ButtonBase_OnClick" Content="X" FontSize="30" Background="#00000000" BorderBrush="#00000000"
+			        Foreground="Red" FontFamily="Bradley Hand ITC" ToolTip="关闭" FontWeight="Bold" />
 		</Canvas>
 	</Grid>
 </Window>

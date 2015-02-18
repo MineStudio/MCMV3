@@ -2,6 +2,7 @@
 {
 	#region
 
+	using System.Reflection;
 	using System.Threading;
 	using System.Windows;
 	using KMCCC.Launcher;
@@ -19,6 +20,7 @@
 		protected override void OnStartup(StartupEventArgs e)
 		{
 			base.OnStartup(e);
+			Reporter.SetClientName("MCMV3 @" + Assembly.GetExecutingAssembly().GetName().Version);
 			_mainWindow = new MainWindow();
 			_mainWindow.Show();
 		}
