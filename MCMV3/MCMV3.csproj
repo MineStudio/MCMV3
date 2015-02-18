@@ -56,10 +56,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="..\..\KMCCC\KMCCC.Pro\Launcher\LauncherCore.cs">
+    <Compile Include="..\KMCCC\KMCCC.Pro\Launcher\LauncherCore.cs">
       <Link>KMCCC\LauncherCore.cs</Link>
     </Compile>
-    <Compile Include="..\..\KMCCC\KMCCC.Pro\Launcher\Reporter.cs">
+    <Compile Include="..\KMCCC\KMCCC.Pro\Launcher\Reporter.cs">
       <Link>KMCCC\Reporter.cs</Link>
     </Compile>
     <Compile Include="App.xaml.cs">
