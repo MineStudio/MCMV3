@@ -5,13 +5,9 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCMV3", "MCMV3\MCMV3.csproj", "{B81C0306-726E-4B46-BD5F-67567F309CA5}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "KMCCC.Shared", "KMCCC\KMCCC.Shared\KMCCC.Shared.shproj", "{564F0AF1-50E3-4AB4-A3B1-9A73882C3F3B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KMCCC.Pro", "KMCCC\KMCCC.Pro\KMCCC.Pro.csproj", "{4270E717-21EE-46CF-A55A-B8AF33BBCB54}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		KMCCC\KMCCC.Shared\KMCCC.Shared.projitems*{564f0af1-50e3-4ab4-a3b1-9a73882c3f3b}*SharedItemsImports = 13
-		KMCCC\KMCCC.Shared\KMCCC.Shared.projitems*{b81c0306-726e-4b46-bd5f-67567f309ca5}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -21,6 +17,10 @@ Global
 		{B81C0306-726E-4B46-BD5F-67567F309CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B81C0306-726E-4B46-BD5F-67567F309CA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B81C0306-726E-4B46-BD5F-67567F309CA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4270E717-21EE-46CF-A55A-B8AF33BBCB54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4270E717-21EE-46CF-A55A-B8AF33BBCB54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4270E717-21EE-46CF-A55A-B8AF33BBCB54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4270E717-21EE-46CF-A55A-B8AF33BBCB54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
